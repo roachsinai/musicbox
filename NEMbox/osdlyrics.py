@@ -55,11 +55,9 @@ if pyqt_activity:
                 QtGui.QApplication.desktop().cursor().pos()
             )
             bl = QtGui.QApplication.desktop().screenGeometry(scn).bottomLeft()
-            br = QtGui.QApplication.desktop().screenGeometry(scn).bottomRight()
-            bc = (bl + br) / 2
             frameGeo = self.frameGeometry()
-            frameGeo.moveCenter(bc)
-            frameGeo.moveBottom(bc.y())
+            frameGeo.moveLeft(bl.x())
+            frameGeo.moveBottom(bl.y())
             self.move(frameGeo.topLeft())
             self.text = "OSD Lyrics for Musicbox"
             self.setWindowTitle("Lyrics")
